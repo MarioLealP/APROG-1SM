@@ -4,23 +4,58 @@ public class APROG_LEI_DH_1211916_1211893 {
     static Scanner ler = new Scanner(System.in);
 
     public static void BPrintMatriz(int[][] terreno) {
+
         for(int c = 0; c < terreno.length; c++) {
             for (int l = 0; l < terreno[c].length; l++) {
+
                 System.out.printf("%d ", terreno[c][l]);
+
             }
+
             System.out.println();
         }
     }
 
-    public static void altTerreno(int[][] terreno){
+    public static void altTerreno(int[][] altterreno){
+
         System.out.println("Alteração do nivel medio da agua em metros");
+
         int alt = ler.nextInt();
-        for(int c = 0; c < terreno.length; c++){
-            for(int l = 0; l < terreno[c].length; l++ ){
-                terreno[c][l] = terreno[c][l] + alt;
+
+        for(int c = 0; c < altterreno.length; c++){
+            for(int l = 0; l < altterreno[c].length; l++ ){
+
+                altterreno[c][l] = altterreno[c][l] + alt;
+
             }
         }
-        BPrintMatriz(terreno);
+
+        BPrintMatriz(altterreno);
+
+    }
+
+    public static void GsubidaInun(int[][] terreno) {
+
+        int altMax = 0;
+
+        for(int c = 0; c < terreno.length; c++){
+            for(int l = 0; l < terreno[c].length; l++ ){
+
+                if(altMax < terreno[c][l]){
+                    altMax = terreno[c][l];
+                }
+
+            }
+        }
+
+        if(altMax > 0){
+            altMax++;
+            System.out.println("para inundacao total, subir :" + altMax + "m");
+        }
+
+        else{
+            System.out.println("O terreno ja se encontra inundado");
+        }
     }
 
     public static void main(String[] args) {
@@ -49,11 +84,26 @@ public class APROG_LEI_DH_1211916_1211893 {
             }
         }
 
-        System.out.println("B");
+        System.out.println("B)");
         BPrintMatriz(terreno);
 
-        System.out.println("C");
+        System.out.println("C)");
         altTerreno(terreno);
+
+        System.out.println("D)");
+
+        System.out.println("E)");
+
+        System.out.println("F");
+
+        System.out.println("G)");
+        GsubidaInun(terreno);
+
+        System.out.println("H)");
+
+
+        System.out.println("I)");
+
 
     }
 }
