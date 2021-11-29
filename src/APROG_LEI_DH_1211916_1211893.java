@@ -3,6 +3,21 @@ import java.util.Scanner;
 public class APROG_LEI_DH_1211916_1211893 {
     static Scanner ler = new Scanner(System.in);
 
+    public static void DAreaSubmersa(int largura, int comprimento, int[][] terreno) {
+        double areaTotal = largura * comprimento;
+        double areaSubmersa = 0;
+        for (int c = 0; c < terreno.length; c++) {
+            for (int l = 0; l < terreno[c].length; l++) {
+                if (terreno[c][l] < 0) {
+                    areaSubmersa++;
+                }
+            }
+        }
+        double percentagemAreaSubmersa = areaSubmersa/areaTotal*100;
+        System.out.printf("area submersa: %.2f", percentagemAreaSubmersa);
+        System.out.println("%");
+    }
+
     public static void BPrintMatriz(int[][] terreno) {
 
         for(int c = 0; c < terreno.length; c++) {
@@ -91,6 +106,7 @@ public class APROG_LEI_DH_1211916_1211893 {
         altTerreno(terreno);
 
         System.out.println("D)");
+        DAreaSubmersa(largura, comprimento, terreno);
 
         System.out.println("E)");
 
