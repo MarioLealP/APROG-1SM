@@ -4,7 +4,6 @@ public class APROG_LEI_DH_1211916_1211893 {
     static Scanner ler = new Scanner(System.in);
 
     public static void altTerreno(int[][] terreno){
-
         System.out.println("Alteração do nivel medio da agua em metros");
 
         int alt = ler.nextInt();
