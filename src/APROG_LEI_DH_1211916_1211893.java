@@ -72,6 +72,29 @@ public class APROG_LEI_DH_1211916_1211893 {
         }
     }
 
+    public static void ICubo(int[][] terreno) {
+
+        int terraMovida = 100000000;
+        int menorC = -1;
+        int menorL = -1;
+
+        for (int c = 0; c < terreno.length; c++) {
+            for (int l = 0; l < terreno[c].length; l++) {
+                int terraMovida2 = (terreno[c][l] * -1) - 3;
+
+                if (terraMovida2 < terraMovida){
+
+                    terraMovida = terraMovida2;
+                    menorC = c;
+                    menorL = l;
+
+                }
+            }
+        }
+        System.out.printf("coordenadas do cubo: (%d,%d), terra a mobilizar: %d m2", menorC, menorL, terraMovida);
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         int largura;
         int comprimento;
@@ -116,7 +139,7 @@ public class APROG_LEI_DH_1211916_1211893 {
 
 
         System.out.println("I)");
-
+        ICubo(terreno);
 
     }
 }
