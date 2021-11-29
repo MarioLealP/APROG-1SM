@@ -32,7 +32,6 @@ public class APROG_LEI_DH_1211916_1211893 {
     }
 
     public static void altTerreno(int[][] altterreno){
-
         System.out.println("Alteração do nivel medio da agua em metros");
 
         int alt = ler.nextInt();
@@ -90,12 +89,10 @@ public class APROG_LEI_DH_1211916_1211893 {
         int[][] terreno = new int[largura][comprimento];
 
         for(int c = 0; c < terreno.length; c++){
-            for(int l = 0; l < terreno[c].length; l++ ){
-
+            for(int l = 0; l < terreno[c].length; l++ ) {
                 System.out.printf("Introduza o nível médio de água na cota %d, %d", c, l);
                 System.out.println();
                 terreno[c][l] = ler.nextInt();
-
             }
         }
 
