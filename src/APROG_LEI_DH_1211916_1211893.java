@@ -62,7 +62,7 @@ public class APROG_LEI_DH_1211916_1211893 {
             }
         }
 
-        if(altMax > 0){
+        if(altMax >= 0){
             altMax++;
             System.out.println("para inundacao total, subir :" + altMax + "m");
         }
