@@ -15,9 +15,7 @@ public class APROG_LEI_DH_1211916_1211893 {
             System.out.println();
         }
     }
-
     public static void altTerreno(int[][] altterreno){
-
         System.out.println("Alteração do nivel medio da agua em metros");
 
         int alt = ler.nextInt();
@@ -58,6 +56,21 @@ public class APROG_LEI_DH_1211916_1211893 {
         }
     }
 
+    public static void DAreaSubmersa(int largura, int comprimento, int[][] terreno) {
+        double areaTotal = largura * comprimento;
+        double areaSubmersa = 0;
+        for (int c = 0; c < terreno.length; c++) {
+            for (int l = 0; l < terreno[c].length; l++) {
+                if (terreno[c][l] < 0) {
+                    areaSubmersa++;
+                }
+            }
+        }
+        double percentagemAreaSubmersa = areaSubmersa/areaTotal*100;
+        System.out.printf("area submersa: %.2f", percentagemAreaSubmersa);
+        System.out.println("%");
+    }
+
     public static void main(String[] args) {
         int largura;
         int comprimento;
@@ -75,12 +88,10 @@ public class APROG_LEI_DH_1211916_1211893 {
         int[][] terreno = new int[largura][comprimento];
 
         for(int c = 0; c < terreno.length; c++){
-            for(int l = 0; l < terreno[c].length; l++ ){
-
+            for(int l = 0; l < terreno[c].length; l++ ) {
                 System.out.printf("Introduza o nível médio de água na cota %d, %d", c, l);
                 System.out.println();
                 terreno[c][l] = ler.nextInt();
-
             }
         }
 
@@ -90,8 +101,9 @@ public class APROG_LEI_DH_1211916_1211893 {
         System.out.println("C)");
         altTerreno(terreno);
 
-        System.out.println("D)");
-
+        System.out.println("D");
+        DAreaSubmersa(largura, comprimento, terreno);
+      
         System.out.println("E)");
 
         System.out.println("F");
